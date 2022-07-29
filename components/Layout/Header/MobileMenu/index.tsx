@@ -79,7 +79,7 @@ export default function MobileMenu({ activePage }: Props) {
                     style={{backgroundColor: 'white', color: 'black'}}
                   >
                     <Download size={24}/>
-                    <g>Download</g>
+                    <span>Download</span>
                   </div>
                 </Link>
               </nav>
