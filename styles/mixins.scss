@@ -1,0 +1,129 @@
+@import "breakpoints";
+@import "variables";
+
+@mixin link_hover() {
+  position: relative;
+  &::before {
+    transform-origin: 100% 50%;
+    transform: scale3d(0, 1, 1);
+    transition: transform 0.3s;
+    content: "";
+  }
+  &:hover {
+    &::before {
+      transform-origin: 0% 50%;
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  &::before,
+  &::after {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    top: 100%;
+    left: 0;
+    pointer-events: none;
+  }
+}
+
+@mixin heading() {
+  font-size: $heading-l;
+  margin: 1rem 0rem;
+  line-height: 1.375;
+  @include bp_m {
+    font-size: $heading-xl;
+  }
+  @include bp_l {
+    font-size: $heading-2xl;
+  }
+  @include bp_xl {
+    font-size: $heading-3xl;
+  }
+}
+
+@mixin section_heading() {
+  font-size: $heading-l;
+  line-height: 1.25;
+  font-weight: 600;
+  margin-top: 0;
+  @include bp_m {
+    font-size: $heading-xl;
+  }
+  @include bp_l {
+    font-size: $heading-2xl;
+  }
+  @include bp_xl {
+    font-size: $heading-3xl;
+  }
+}
+
+@mixin body() {
+  font-size: $body-m;
+  @include bp_m {
+    font-size: $body-s;
+  }
+  @include bp_l {
+    font-size: $body-l;
+  }
+  @include bp_xl {
+    font-size: $body-xl;
+  }
+}
+
+@mixin shadow($color) {
+  box-shadow: $color 0px 4px 16px, $color 0px 8px 32px;
+}
+
+@mixin shadowDark($color) {
+  box-shadow: $color 0px 4px 16px, $color 0px 8px 32px;
+}
+
+@mixin shadowDarker($color) {
+  box-shadow: $color 0px 4px 16px, $color 0px 8px 24px, $color 0px 16px 56px;
+}
+
+@mixin button($variant) {
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  @if $variant == primary {
+    background: $accent-blue;
+  } @else {
+    background: $accent-yellow;
+  }
+  cursor: pointer;
+  font-size: $body-s;
+  transition: background-color 250ms, box-shadow 250ms, box-shadow 250ms;
+  opacity: 100%;
+  &:hover {
+    @if $variant == primary {
+      background: $accent-blue-dark;
+      @include shadow($accent-blue-shadow);
+    } @else {
+      background: $accent-yellow-dark;
+      @include shadow($accent-yellow-shadow);
+    }
+  }
+  @include bp_m {
+    font-size: $body-s;
+  }
+  @include bp_l {
+    padding: 1rem 1.5rem;
+  }
+  @include bp_2xl {
+    font-size: $body-m;
+  }
+}
+
+@mixin brand_font() {
+  font-family: "KG Summer Sunshine Blackout";
+  font-weight: 400;
+  color: $accent-blue;
+  padding: 0 1rem;
+}
+
+@mixin section_shadow() {
+  background: white;
+  box-shadow: 0px 30px 100px #b1c0ff5c;
+}

@@ -1,0 +1,41 @@
+@mixin bp_xs() {
+  @media (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin bp_s() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin bp_m() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin bp_l() {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin bp_xl() {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin bp_2xl() {
+  @media (min-width: 2400px) {
+    @content;
+  }
+}
+
+@mixin bp_3xl() {
+  @media (min-width: 3000px) {
+    @content;
+  }
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docs - robin</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+  <link rel="stylesheet" href="https://pidgon.me/source/css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#getting-started">Getting Started</a>
+<ul>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#running-and-creating-a-file">Running and creating a file</a>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#syntax">Syntax</a>
+<ul>
+<li><a href="#the-basics">The Basics</a></li>
+<li><a href="#operators">Operators</a></li>
+<li><a href="#ifelse-functions">If/Else Functions</a></li>
+<li><a href="#delays">Delays</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+</li>
+<li><a href="#other-cool-features">Other cool features!</a>
+<ul>
+<li><a href="#date-and-time">Date and Time</a></li>
+<li><a href="#encryption">Encryption</a></li>
+<li><a href="#text-servers">Text Servers</a></li>
+</ul>
+</li>
+<li></li>
+<li><a href="#thank-you-for-reading">Thank you for reading!</a></li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="getting-started">Getting Started</h1>
+<p>Welcome to the robin documentation!</p>
+<p>This course will guide you through everything you need to know on robin!</p>
+<p>If you have any questions about robin, feel free to contact support or email <a href="mailto:mihi@pidgon.me">me</a>!</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>macOS 10.14 or later, Windows 10 or later, all Linux versions.</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<ul>
+<li>First, <a href="/download">download</a> robin. Once it’s done, you can unzip it and store it on your Desktop.</li>
+<li>If you haven’t already, download and set up<a href="https://nodejs.org/en/download/">Node.js</a>, as this is what your robin code will be running on.</li>
+<li>You can also optionally download <a href="https://code.visualstudio.com/download">VSCode</a>, as robin will install extensions on your VSCode that makes writing in robin easier.</li>
+<li>Once you’re done with downloading everything, open up your <code>robin</code> folder, and follow these steps:
+<ol>
+<li>Open your Command Line or Terminal, and copy and paste<br>
+<code>cd Desktop/robin &amp;&amp; sh start.sh</code> (assuming you’ve stored the file on your Desktop), and click enter. It will take a few seconds, and after you get a message that says ‘robin is installed’, you can close your Terminal/Command line and delete the robin folder on your Desktop.</li>
+</ol>
+</li>
+</ul>
+<h2 id="running-and-creating-a-file">Running and creating a file</h2>
+<p>To create a file, you can type in <code>robin create Desktop/index.robin</code>. This will create a file called <code>index.robin</code> on your desktop. Now, you can right click the file and open it using your text editor, and type in your. code. Once you’re done, save the file (Ctrl+S) and go back to your Command line.</p>
+<p>Now, type in <code>robin run Desktop/index.robin</code>. This will run your file and give you an output.</p>
+<h4 id="auto-restart">Auto Restart</h4>
+<p>Robin has a cool feature where, unlike other languages, you don’t have to keep typing <code>robin run filename</code> if you make any changes. You will only have to run the command once, and every time you save the file, it will restart automatically!</p>
+<h1 id="syntax">Syntax</h1>
+<p>Here is the syntax, functions and methods currently supported by robin.</p>
+<h2 id="the-basics">The Basics</h2>
+<h3 id="creating-a-variable">Creating a variable</h3>
+<p>To create a variable, type in <code>set variableName to variableValue</code><br>
+The following code will create a variable a with a value of 3:<br>
+<code>set a to 3</code><br>
+You don’t have to store just numbers. You can store letters too!<br>
+For example,<br>
+<code>set a to ‘Hello robin!’</code><br>
+You can even set it to true or false (boolean) values!<br>
+<code>set isRobinCool to true</code></p>
+<h3 id="printing-to-the-console">Printing to the console</h3>
+<p>This is how you can print text to the console using robin:<br>
+<code>print ‘Hello robin!’ to the console</code></p>
+<p>You can also print numbers, boolean values, and even variables:</p>
+<pre class=" language-js"><code class="prism  language-js">print <span class="token number">43</span> to the console
+print <span class="token boolean">false</span> to the console
+<span class="token keyword">set</span> a to <span class="token string">'hey!'</span>
+print a to the console
+</code></pre>
+<p>You can also combine them all!</p>
+<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">set</span> a to <span class="token string">'hello'</span>
+print a <span class="token operator">+</span> <span class="token string">' robin!'</span>
+</code></pre>
+<p>The above code will print “hello robin!” to the console.</p>
+<p>Sometimes, you may need to write additional text, which you don’t want to be executed when the code runs. You can use something called comments. This is how you use comments in robin:</p>
+<pre class=" language-python"><code class="prism  language-python"> <span class="token builtin">set</span> a to <span class="token string">'hello'</span> <span class="token operator">//</span>this will create a variable a to the value <span class="token string">'hello'</span> 
+</code></pre>
+<p>The text (this will… value ‘hello’) will not be run because it starts with <code>//</code>, which is ignored by robin.</p>
+<h3 id="keywords">Keywords</h3>
+<p>robin has a few reserved words, or keywords, that are used by the compiler when it is run. For example, the word <code>set</code> is a robin keyword.<br>
+But what if you wanted to print the word <code>set</code> to the console?<br>
+You can add a caret (<code>^</code>) anywhere in the keyword, so that the word is ignored.<br>
+For example,</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">print</span> <span class="token string">'I just s^et a variable!'</span> to the console
+<span class="token operator">//</span>This will output<span class="token punctuation">:</span> <span class="token string">"I just set a variable!"</span>
+</code></pre>
+<p>Since robin is in its earliest stages, this is one bug that makes writing in robin slightly more laborious than it should be, but I am working on a fix.</p>
+<h2 id="operators">Operators</h2>
+<p>Here are the operators supported in robin:</p>
+<h3 id="arithmetic-operators">Arithmetic Operators</h3>
+<p>All arithmetic operators start and end with a <code>$</code> sign.</p>
+<ul>
+<li>Addition:<br>
+To add two numbers, type in <code>$add someNumber and otherNumber$</code><br>
+For example:<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">print</span> $add <span class="token number">2</span> <span class="token operator">and</span> <span class="token number">3</span>$ to the console
+<span class="token operator">//</span>this will <span class="token keyword">print</span> <span class="token number">5</span> <span class="token punctuation">(</span><span class="token operator">=</span><span class="token number">2</span><span class="token operator">+</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+</code></pre>
+</li>
+<li>Subtraction:<br>
+To subtract two numbers, type in <code>$subtract someNumber and otherNumber$</code><br>
+For example:<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">print</span> $subtract <span class="token number">7</span> <span class="token operator">and</span> <span class="token number">5</span>$ to the console
+<span class="token operator">//</span>this will <span class="token keyword">print</span> <span class="token number">2</span> <span class="token punctuation">(</span><span class="token operator">=</span><span class="token number">7</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+</code></pre>
+</li>
+<li>Multiplication:<br>
+To multiply two numbers, type in <code>$multiply someNumber and otherNumber$</code><br>
+For example:<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">print</span> $multiply <span class="token number">4</span> <span class="token operator">and</span> <span class="token number">5</span>$ to the console
+<span class="token operator">//</span>this will <span class="token keyword">print</span> <span class="token number">20</span> <span class="token punctuation">(</span><span class="token operator">=</span><span class="token number">4</span><span class="token operator">*</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+</code></pre>
+</li>
+<li>Division:<br>
+To divide two numbers, type in <code>$divide someNumber and otherNumber$</code><br>
+For example:<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">print</span> $multiply <span class="token number">20</span> <span class="token operator">and</span> <span class="token number">5</span>$ to the console
+<span class="token operator">//</span>this will <span class="token keyword">print</span> <span class="token number">4</span> <span class="token punctuation">(</span><span class="token operator">=</span><span class="token number">20</span><span class="token operator">/</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+</code></pre>
+</li>
+</ul>
+<h4 id="additional-functions">Additional Functions</h4>
+<p>There are a few other functions in robin which are also helpful:</p>
+<ul>
+<li>Get a random number within a range:<br>
+You can generate a random number within a range by using:<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">get</span> a number <span class="token keyword">from</span> $<span class="token number">1</span> to <span class="token number">4</span>$
+</code></pre>
+This will give you a number from 1 to 4, but there’ll also be a long line of trailing decimals. To remove those decimals, we’ll have to round off that number.</li>
+<li>Rounding off to the nearest integer:<br>
+You can round off or remove the trailing decimals of a number by using:<pre class=" language-js"><code class="prism  language-js">round off $<span class="token number">4566.7565</span>$
+</code></pre>
+</li>
+</ul>
+<p>If you wanted to round of a number from 1 to 4, as seen in the last example, you will have to do:</p>
+<pre class=" language-js"><code class="prism  language-js">round off $<span class="token keyword">get</span> a number <span class="token keyword">from</span> $<span class="token number">1</span> to <span class="token number">4</span>$$
+</code></pre>
+<h3 id="relational-operators">Relational Operators</h3>
+<p>Relational operators can help you compare two values. Here are all the relational operators in robin:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token number">3</span> <span class="token keyword">is</span> greater than <span class="token number">4</span> <span class="token operator">//</span>will output false
+
+<span class="token number">7</span> <span class="token keyword">is</span> lesser than <span class="token number">210</span> <span class="token operator">//</span>will output true
+
+<span class="token number">20</span> <span class="token keyword">is</span> equal to <span class="token number">20</span> <span class="token operator">//</span>will output true
+ 
+<span class="token number">8</span> <span class="token keyword">is</span> greater than <span class="token operator">or</span> equal to <span class="token number">9</span> <span class="token operator">//</span>will output false
+
+<span class="token number">9</span> <span class="token keyword">is</span> lesser than <span class="token operator">or</span> equal to <span class="token number">9</span> <span class="token operator">//</span>will output true
+</code></pre>
+<p>We will learn more about where we can use these in the next section.</p>
+<h2 id="ifelse-functions">If/Else Functions</h2>
+<p>If/Else statements can be used to compare two values, and then execute something based on the output of the comparison.<br>
+This is how you use an If function in robin:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">if</span> $<span class="token number">1</span> <span class="token keyword">is</span> greater than <span class="token number">2</span>$<span class="token punctuation">,</span>
+	<span class="token keyword">print</span> <span class="token string">'1 &gt; 2!'</span> to the console
+end
+</code></pre>
+<p>This will print “1 &gt; 2” if the comparison is true. But 1 is lesser than 2, so this function would never execute. An Else function would help us get a value if it isn’t true:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">if</span> $<span class="token number">1</span> <span class="token keyword">is</span> greater than <span class="token number">2</span>$<span class="token punctuation">,</span>
+	<span class="token keyword">print</span> <span class="token string">'1 &gt; 2!'</span> to the console
+otherwise<span class="token punctuation">,</span>
+	<span class="token keyword">print</span> <span class="token string">'2 &gt; 1'</span> to the console
+end
+</code></pre>
+<h2 id="delays">Delays</h2>
+<p>What if you wanted to execute something after a delay?<br>
+In robin, you can do this:</p>
+<pre class=" language-js"><code class="prism  language-js">create a delay <span class="token keyword">of</span> <span class="token number">5000</span> then <span class="token comment">//Delay time is in milliseconds</span>
+	print <span class="token string">'5 seconds are up!'</span> to the console
+finish
+</code></pre>
+<h2 id="functions">Functions</h2>
+<p>Functions are a way to keep code inside a container so you don’t have to repeatedly type in the code. They can also be called with a single line, anywhere in your file.<br>
+Here’s how you can create functions in robin:</p>
+<pre class=" language-js"><code class="prism  language-js">create a <span class="token keyword">function</span> printHelloWorld which will
+	print <span class="token string">'hello world!'</span> to the console
+end
+</code></pre>
+<p>To call the above function, type in,</p>
+<pre class=" language-js"><code class="prism  language-js">start printHelloWorld please
+</code></pre>
+<p>What if you wanted to pass values into the function? For that, do:</p>
+<pre class=" language-js"><code class="prism  language-js">create a <span class="token keyword">function</span> add which takes num1 and num2 then<span class="token punctuation">,</span>
+	print $add num1 and num2$ to the console
+end
+</code></pre>
+<p>To call this function,</p>
+<pre class=" language-js"><code class="prism  language-js">start add <span class="token keyword">with</span> values <span class="token keyword">of</span> $<span class="token number">5</span> and <span class="token number">7</span>$
+</code></pre>
+<h1 id="other-cool-features">Other cool features!</h1>
+<p>robin also has a few other cool features that other languages may not have.</p>
+<h2 id="date-and-time">Date and Time</h2>
+<p>Here are a few date and time related functions, with some examples:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">print</span> the time to the console <span class="token operator">//</span><span class="token number">12</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span>
+<span class="token keyword">print</span> the period to the console <span class="token operator">//</span>AM <span class="token operator">or</span> PM
+<span class="token keyword">print</span> the second to the console <span class="token operator">//</span><span class="token number">56</span>
+<span class="token keyword">print</span> the minute to the console <span class="token operator">//</span><span class="token number">40</span>
+<span class="token keyword">print</span> the date to the console <span class="token operator">//</span><span class="token number">3</span>
+<span class="token keyword">print</span> the day to the console <span class="token operator">//</span>Monday
+<span class="token keyword">print</span> the year to the console <span class="token operator">//</span><span class="token number">2022</span>
+<span class="token keyword">print</span> the name of the month to the console <span class="token operator">//</span>January
+<span class="token keyword">print</span> the number of the month to the console <span class="token operator">//</span><span class="token number">1</span>
+</code></pre>
+<p>You can use these anywhere you would use variables, except for setting a value.</p>
+<h2 id="encryption">Encryption</h2>
+<p>robin supports encryption too! It uses a slightly better version of an encoding specification called AES-256, called PidgonCrypt. To use it, type in:</p>
+<pre><code>print encrypt $'hello robin!'$ to the console
+</code></pre>
+<p>This would give out a value that looks like 8b3b6a81101b3afefb15229f12fe6ded3e3f19a4ba56c1a6d60f94b0c416dcc4</p>
+<p>To decrypt a value, type in:</p>
+<pre><code>print decrypt $'9ae3abb363c2dfbb0efa87a34e306fe9'$ to the console
+</code></pre>
+<p>If (for some reason) you have encrypted your robin code with PidgonCrypt, you can execute the code by running <code>robin run filename --secure</code></p>
+<h2 id="text-servers">Text Servers</h2>
+<p>This is slightly advanced (and also , but robin allows you to host text in the form of html or plaintext on your machine’s localhost or 127.0.0.1 IP. To use it, type in:</p>
+<pre class=" language-js"><code class="prism  language-js">create a text server that says <span class="token string">'Some text'</span> at port $<span class="token number">3000</span>$
+</code></pre>
+<p>If this code is executed, the text ‘Some text’ will be visible at <a href="http://localhost:3000">http://localhost:3000</a>.</p>
+<h1 id="section"></h1>
+<h1 id="thank-you-for-reading">Thank you for reading!</h1>
+
+    </div>
+  </div>
+</body>
+
+</html>
