@@ -88,7 +88,6 @@ const Header: React.FC<Props> = (props) => {
           </Link>
         </nav>
         <div className={styles.navMobile}>
-          <MobileMenu activePage={activePage} />
         </div>
       </div>
     </header>
