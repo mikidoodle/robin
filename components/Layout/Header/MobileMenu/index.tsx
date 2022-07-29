@@ -9,11 +9,7 @@ import clsx from "clsx";
 import { useRouter } from "next/router";
 
 type Props = {
-  activePage:
-    | "home"
-    | "/docs"
-    | "/download"
-    | "/support";
+  activePage: "home" | "/docs" | "/download" | "/support";
 };
 
 export default function MobileMenu({ activePage }: Props) {
@@ -56,33 +52,34 @@ export default function MobileMenu({ activePage }: Props) {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
               aria-label="Mega menu"
-              className={styles.megaMenu}
             >
-              <div className={styles.closeButton}>
-                <Hamburger
-                  toggled={isOpen}
-                  toggle={setOpen}
-                  label="close mobile menu"
-                />
-              </div>
+              <div className={styles.megaMenu}>
+                <div className={styles.closeButton}>
+                  <Hamburger
+                    toggled={isOpen}
+                    toggle={setOpen}
+                    label="close mobile menu"
+                  />
+                </div>
 
-              <nav className={clsx(styles.mobileNav, "container")}>
-                <Link href="/docs">
-                  <a className={styles.navLink}>Docs</a>
-                </Link>
-                <Link href="/support">
-                  <a className={styles.navLink}>Support</a>
-                </Link>
-                <Link href="/download">
-                  <div
-                  className={styles.navLink}
-                    style={{backgroundColor: 'white', color: 'black'}}
-                  >
-                    <Download size={24}/>
-                    <span>Download</span>
-                  </div>
-                </Link>
-              </nav>
+                <nav className={clsx(styles.mobileNav, "container")}>
+                  <Link href="/docs">
+                    <a className={styles.navLink}>Docs</a>
+                  </Link>
+                  <Link href="/support">
+                    <a className={styles.navLink}>Support</a>
+                  </Link>
+                  <Link href="/download">
+                    <div
+                      className={styles.navLink}
+                      style={{ backgroundColor: "white", color: "black" }}
+                    >
+                      <Download size={24} />
+                      <span>Download</span>
+                    </div>
+                  </Link>
+                </nav>
+              </div>
             </MotionDialogContent>
           </MotionDialogOverlay>
         )}
