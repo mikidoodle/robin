@@ -6,7 +6,7 @@ export async function middleware(req: any, res: any) {
   } else if(pathname == '/docs') {
     return NextResponse.redirect(req.url + '.html');
   } else if(pathname == '/support') {
-    return NextResponse.redirect('mailto:support@pidgon.me');
+    return NextResponse.redirect('mailto:support@pidgon.com');
   }
   return NextResponse.next();
 }
