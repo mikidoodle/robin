@@ -36,7 +36,7 @@ const GettingStarted: React.FC = () => {
           </p>
           <p>
             If you have any questions about robin, feel free to contact support
-            or <a className="link" href="mailto:mihi@pidgon.me">email me</a>!
+            or <a className="link" href="mailto:mihir@pidgon.com">email me</a>!
           </p>
           <h2 id="requirements">Requirements</h2>
           <ul>
